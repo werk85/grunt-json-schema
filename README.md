@@ -25,13 +25,15 @@ In your project's Gruntfile, add a section named `json_schema` to the data objec
 ```js
 grunt.initConfig({
   json_schema: {
-    options: {
-      // json-schema specific options go here
-    },
-    files: {
-      // Schema to file mapping goes here
-    },
-  },
+    test: {
+      options: {
+        // json-schema specific options go here
+      },
+      files: {
+        // Schema to file mapping goes here
+      } 
+    }
+  }
 })
 ```
 
@@ -47,11 +49,13 @@ In this example the files at `path1/input.json` and `path2/*.json` are validated
 ```js
 grunt.initConfig({
   json_schema: {
-    options: {},
-    files: {
-      'path/schema.json': ['path1/input.json', 'path2/*.json']
-    },
-  },
+    test: {
+      options: {},
+      files: {
+        'path/schema.json': ['path1/input.json', 'path2/*.json']
+      } 
+    }
+  }
 })
 ```
 
@@ -61,13 +65,15 @@ You can define custom `options` that are given to the [json-schema] validator.
 ```js
 grunt.initConfig({
   json_schema: {
-    options: {
-      validateFormatsStrict: true
-    },
-    files: {
-      'path/schema.json': ['path1/input.json', 'path2/*.json']
-    },
-  },
+    test: {
+      options: {
+        validateFormatsStrict: true
+      },
+      files: {
+        'path/schema.json': ['path1/input.json', 'path2/*.json']
+      }  
+    }
+  }
 })
 ```
 
