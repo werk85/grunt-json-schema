@@ -26,9 +26,11 @@ module.exports = function(grunt) {
         var result = validator.validate(input, schema, options);
         if (!result.valid) {
           grunt.log.subhead('Errors in ' + src);
-          result.errors.forEach(function(error) {
+          var onError = options.onError || function(error) {
             grunt.log.errorlns(error.property + ' ' + error.message);
-          });
+          };
+
+          result.errors.forEach(onError);
         } else {
           grunt.log.oklns(src);
         }
