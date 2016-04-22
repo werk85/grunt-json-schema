@@ -31,7 +31,7 @@ grunt.initConfig({
       },
       files: {
         // Schema to file mapping goes here
-      } 
+      }
     }
   }
 })
@@ -53,7 +53,7 @@ grunt.initConfig({
       options: {},
       files: {
         'path/schema.json': ['path1/input.json', 'path2/*.json']
-      } 
+      }
     }
   }
 })
@@ -77,5 +77,23 @@ grunt.initConfig({
 })
 ```
 
+You can also define custom `onError` callback.
+
+```js
+grunt.initConfig({
+  json_schema: {
+    test: {
+      options: {
+        onError: function(error){
+          console.log("Error is ",error);
+        }
+      },
+      files: {
+        'path/schema.json': ['path1/input.json', 'path2/*.json']
+      }  
+    }
+  }
+})
+```
 ## Release History
 _(Nothing yet)_
